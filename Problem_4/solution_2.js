@@ -24,7 +24,7 @@ const valid_hgt = (hgt) => {
 };
 
 const valid_hcl = (hcl) => {
-    return (hcl[0] === '#' && /[0-9a-f]{6}/.exec(hcl.slice(1,))) ? true : false;
+    return (/^#[0-9a-f]{6}/.exec(hcl)) ? true : false;
 };
 
 const valid_ecl = (ecl) => {
