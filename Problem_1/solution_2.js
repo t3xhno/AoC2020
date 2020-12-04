@@ -16,7 +16,6 @@ const main = async () => {
         for (let j = i + 1; j < dataset.length - 1; j++) {
             for (let k = j + 1; k < dataset.length; k++) {
                 if (dataset[i] + dataset[j] + dataset[k] === 2020) {
-                    console.log(`${dataset[i]} + ${dataset[j]} + ${dataset[k]} (sum = ${dataset[i] + dataset[j] + dataset[k]}) = ${dataset[i] * dataset[j] * dataset[k]}`);
                     return dataset[i] * dataset[j];
                 }
             }

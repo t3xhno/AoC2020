@@ -1,21 +1,17 @@
-use std::fs;
+use std::env;
 
-const FILE_NAME: &str = "dataset.txt";
+mod solution_1;
+mod solution_2;
 
 fn main () {
-    let dataset = fs::read_to_string(FILE_NAME).expect("Something went wrong!");
-    let mut salaries: Vec<u16> = vec![];
-
-    for word in dataset.split_whitespace() {
-        salaries.push(word.parse::<u16>().unwrap());
-    }
-
-    for i in 0..salaries.len() - 1 {
-        for j in i + 1..salaries.len() {
-            match salaries[i] + salaries[j] {
-                2020 => println!("{}", salaries[i] * salaries[j]),
-                _ => ()
-            }
+    let args: Vec<String> = env::args().collect();
+    if args.len() != 2 {
+        println!("Please enter either program_1 or program_2.");
+    } else if args.len() == 2 {
+        match args[1].as_str() {
+            "program_1" => solution_1::run(),
+            "program_2" => solution_2::run(),
+            _ => println!("Invalid argument!")
         }
     }
 }
