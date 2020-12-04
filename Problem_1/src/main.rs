@@ -3,7 +3,10 @@ use std::fs;
 const FILE_NAME: &str = "dataset.txt";
 
 fn main () {
-    let dataset = fs::read_to_string(FILE_NAME).expect("Smething went wrong!");
+    let dataset = match fs::read_to_string(FILE_NAME) {
+        Ok(value) => value,
+        Err(e) => e.to_string()
+    };
     let mut salaries: Vec<u16> = vec![];
 
     for word in dataset.split_whitespace() {
@@ -16,7 +19,7 @@ fn main () {
                 2020 => {
                     println!("{}", salaries[i] * salaries[j]);
                 },
-                _ => ()
+                _ => (),
             }
         }
     }
