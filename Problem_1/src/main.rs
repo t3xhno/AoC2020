@@ -10,6 +10,8 @@ fn main () {
         salaries.push(word.parse::<u16>().unwrap());
     }
 
+    println!("Hi!");
+
     for i in 0..salaries.len() - 1 {
         for j in i + 1..salaries.len() {
             match salaries[i] + salaries[j] {
