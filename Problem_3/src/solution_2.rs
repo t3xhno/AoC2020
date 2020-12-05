@@ -12,7 +12,6 @@ pub fn run (dataset: String) {
             }
             pos_x += usize::from(step.0);
         }
-        println!("{}", count_trees);
         result *= count_trees;
     }
     println!("{}", result);
