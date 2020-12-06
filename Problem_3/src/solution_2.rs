@@ -1,4 +1,4 @@
-pub fn run (dataset: String) {
+pub fn run (dataset: &String) {
     let matrix: Vec<&str> = dataset.split_terminator("\n").collect();
     const STEPS: [(u8, u8);5] = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
     let mut result: u64 = 1;

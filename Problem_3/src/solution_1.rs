@@ -1,4 +1,4 @@
-pub fn run (dataset: String) {
+pub fn run (dataset: &String) {
     let matrix: Vec<&str> = dataset.split_terminator("\n").collect();
     let mut count_trees = 0;
     let mut pos_x = 0;
