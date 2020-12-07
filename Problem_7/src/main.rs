@@ -122,8 +122,8 @@ fn main() {
     let input = read_file("dataset.txt").unwrap();
     let rules: RuleSet = parse_input(&input).unwrap().1;
 
-    println!("part1 {}", rules.part1());
-    println!("part2 {}", rules.part2());
+    println!("{}", rules.part1());
+    println!("{}", rules.part2());
 }
 
 
