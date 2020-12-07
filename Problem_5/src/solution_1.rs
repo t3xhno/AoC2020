@@ -11,7 +11,6 @@ pub fn run (dataset: &String) {
             } else {}
         } else {}
     }
-    println!("{:?}", max);
     println!("{}", max.0 as u16 * 8 + max.1 as u16);
 }
 /* ASSOCIATED FUNCTIONS */
