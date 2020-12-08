@@ -19,8 +19,7 @@ My solutions to the Advent of Code 2020 problems.
 
 List of friends (proclaimed by me):
 
-<p align="right">
 | Link: | What are they good for? |
 | --- | --- |
 | 1. [Elukej AKA Bludni](https://github.com/Bludni) | <p align="center"><img src="https://seeklogo.com/images/D/dota-2-logo-A8CAC9B4C9-seeklogo.com.png" height="60" width="auto"></p> |
-| 2. [The other guy](https://github.com/sheepy9) ([His real profile](https://github.com/arijanamigh)) | <p align="center"><img src="https://lh3.googleusercontent.com/proxy/UdawtypfKQRSTo7mxbZVn5I2xrIocz5sJBuxYtWeyUCZ6EusURPOdXIsf22-1H6jKQo0q9aYwwLN_Eh67TI54m6B1e-ktJ23b-5vC9H2Gkqq9XYaEtNlmj8vHn-7UYEbzrDFI1k" height="60" width="auto"></p> | </p>
+| 2. [The other guy](https://github.com/sheepy9) ([His real profile](https://github.com/arijanamigh)) | <p align="center"><img src="https://lh3.googleusercontent.com/proxy/UdawtypfKQRSTo7mxbZVn5I2xrIocz5sJBuxYtWeyUCZ6EusURPOdXIsf22-1H6jKQo0q9aYwwLN_Eh67TI54m6B1e-ktJ23b-5vC9H2Gkqq9XYaEtNlmj8vHn-7UYEbzrDFI1k" height="60" width="auto"></p> |
