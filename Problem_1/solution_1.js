@@ -3,7 +3,7 @@ const fs = require('fs');
 
 let dataset = [];
 
-const main = async () => {
+const main = (async () => {
     const readInterface = readline.createInterface({
         input: fs.createReadStream('./dataset.txt', 'utf-8')
     });
@@ -20,6 +20,4 @@ const main = async () => {
             }
         }
     }
-};
-
-main();
+})();

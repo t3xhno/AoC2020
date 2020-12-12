@@ -1,14 +1,10 @@
 use std::fs;
 
-const FILE_NAME: &str = "dataset.txt";
-
 pub fn run () {
-    let dataset = fs::read_to_string(FILE_NAME).expect("Something went wrong!");
-    let mut salaries: Vec<u32> = vec![];
+    let dataset = fs::read_to_string("dataset.txt").unwrap();
 
-    for word in dataset.split_whitespace() {
-        salaries.push(word.parse::<u32>().unwrap());
-    }
+    let salaries = dataset.lines()
+        .map(|x| x.parse().unwrap()).collect::<Vec<u32>>();
 
     for i in 0..salaries.len() - 2 {
         for j in i + 1..salaries.len() -1 {
