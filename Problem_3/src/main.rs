@@ -1,21 +1,28 @@
-use std::fs;
-use std::env;
+use std::fs::File;
+use std::io::{BufRead, BufReader};
 
-mod solution_1;
-mod solution_2;
-
-const FILE_NAME: &str = "dataset.txt";
-
-fn main () {
-    let dataset = fs::read_to_string(FILE_NAME).expect("Something went wrong...");
-    let args: Vec<String> = env::args().collect();
-    if args.len() != 2 {
-        println!("Please enter either problem_1 or problem_2.");
-    } else if args.len() == 2 {
-        match args[1].as_str() {
-            "problem_1" => solution_1::run(&dataset),
-            "problem_2" => solution_2::run(&dataset),
-            _ => println!("Invalid argument!")
+fn main() {
+    let reader = BufReader::new(File::open("dataset.txt").unwrap());
+    let slopes: [(u8, u8); 5] = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
+    let mut part1: u16 = 0;
+    let mut part2: u64 = 1;
+    let mut forest: [[char;31]; 323] = [[' ';31]; 323];
+    reader.lines().enumerate().for_each(|(i, line)| {
+        line.unwrap().chars().enumerate().for_each(|(j, c)| forest[i][j] = c)
+    });
+    slopes.iter().enumerate().for_each(|(i, slope)| {
+        let (mut pos_x, mut pos_y) = (0u16, 0u8);
+        let mut tree_count = 0;
+        while pos_x < 323 {
+            match forest[pos_x as usize][pos_y as usize] {
+                '#' => tree_count += 1,
+                _ => ()
+            }
+            pos_y = (pos_y + slope.0) % 31;
+            pos_x += slope.1 as u16;
         }
-    }
+        if i == 1 { part1 = tree_count }
+        part2 *= tree_count as u64;
+    });
+    println!("1: {}\n2: {}", part1, part2);
 }
