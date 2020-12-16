@@ -2,14 +2,10 @@ use std::fs;
 
 fn main() {
     let input = fs::read_to_string("dataset.txt").unwrap();
-    let mut part1 = 0;
-    let mut part2 = 0;
+    let (mut part1, mut part2) = (0u16, 0u16);
     input.lines().for_each(|line| {
-        let mut range: [u8; 2] = [0, 0];
-        let mut letter: char = ' ';
-        let mut password: String = String::new();
-        let mut first: char = ' ';
-        let mut second: char = ' ';
+        let (mut range, mut letter, mut password) = ([0u8, 0u8], ' ', String::new());
+        let (mut first, mut second) = (' ', ' ');
         line.split(" ").enumerate().for_each(|(i, s)| {
             match i {
                 0 => s.split("-").enumerate().for_each(|(i, n)| range[i] = n.parse().unwrap()),

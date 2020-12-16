@@ -4,8 +4,7 @@ use std::io::{BufRead, BufReader};
 fn main() {
     let reader = BufReader::new(File::open("dataset.txt").unwrap());
     let slopes: [(u8, u8); 5] = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)];
-    let mut part1: u16 = 0;
-    let mut part2: u64 = 1;
+    let (mut part1, mut part2) = (0u16, 1u64);
     let mut forest: [[char;31]; 323] = [[' ';31]; 323];
     reader.lines().enumerate().for_each(|(i, line)| {
         line.unwrap().chars().enumerate().for_each(|(j, c)| forest[i][j] = c)
